@@ -1,0 +1,136 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/**
+*
+*   Content
+*
+ */
+
+.content {
+    @apply p-4 w-11/12 mx-auto flex-1;
+}
+
+/**
+*
+*   Menu
+*
+ */
+.navbar-items {
+    @apply text-gray-700 mr-4 font-bold py-2;
+}
+
+.navbar-items.nav {
+    @apply block;
+}
+
+.navbar-items.subcategory {
+    @apply inline-block mr-2 bg-gray-200 py-1 px-2 rounded;
+}
+
+@screen lg {
+    .navbar-items.nav {
+        @apply inline;
+    }
+}
+
+.navbar-items.subcategory:hover {
+    @apply shadow;
+}
+
+.navbar-items:hover {
+    @apply text-black;
+}
+
+/**
+*
+*   Buttons
+*
+ */
+.btn {
+    @apply font-bold py-2 px-4 rounded shadow text-sm;
+}
+.btn-blue {
+    @apply bg-blue-300 text-white;
+}
+.btn-blue:hover {
+    @apply bg-blue-400;
+}
+.btn-red {
+    @apply bg-red-500 text-white;
+}
+.btn-red:hover {
+    @apply bg-red-700;
+}
+.btn-green {
+    @apply bg-green-500 text-white;
+}
+.btn-green:hover {
+    @apply bg-green-600;
+}
+.btn-light:hover {
+    @apply shadow bg-gray-100;
+}
+.btn-sm {
+    @apply text-sm py-1 px-2;
+}
+
+/**
+*
+* Input
+*
+ */
+
+.input {
+    @apply bg-white border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal;
+}
+.input:focus {
+    @apply outline-none shadow-outline;
+}
+.custom-label input:checked + svg {
+    display: block !important;
+}
+
+/**
+*
+*   Errors messages
+*
+ */
+
+.error {
+    @apply text-red-500 block;
+}
+
+/**
+*
+*   Box
+*
+ */
+
+.center-box {
+    @apply flex items-center content-center h-full;
+}
+
+/**
+*
+*   Footer
+*
+ */
+
+.footer {
+    @apply bg-gray-800 relative pt-12 mt-20 text-white;
+}
+.footer::after {
+    content: "";
+    width: 100%;
+    height: 70px;
+    background: url("https://tailwindcomponents.com/svg/waves-footer.svg");
+    background-position: bottom;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: -68px;
+}
