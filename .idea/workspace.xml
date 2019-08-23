@@ -24,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
@@ -134,16 +137,20 @@
       <path value="$PROJECT_DIR$/vendor/larapack/voyager-hooks" />
       <path value="$PROJECT_DIR$/vendor/caouecs/laravel-lang" />
       <path value="$PROJECT_DIR$/vendor/laravelista/comments" />
+      <path value="$PROJECT_DIR$/vendor/kris/laravel-form-builder" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
   <component name="ProjectId" id="1PWN8iCa27KNWiZlgjJn4lFxmus" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -152,11 +159,11 @@
       <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\sass\theme" />
+      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\sass" />
+      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\app\Http\Controllers\Post" />
       <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views" />
       <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\lang" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views\auth" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views\post\pages" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views\post" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,11 +199,29 @@
       <workItem from="1566045740577" duration="12404000" />
       <workItem from="1566059767370" duration="14167000" />
       <workItem from="1566132405707" duration="11640000" />
-      <workItem from="1566152141084" duration="12262000" />
+      <workItem from="1566152141084" duration="13435000" />
+      <workItem from="1566214692115" duration="8239000" />
+      <workItem from="1566244497219" duration="5907000" />
+      <workItem from="1566297004118" duration="794000" />
+      <workItem from="1566386569174" duration="7986000" />
+      <workItem from="1566554596909" duration="1188000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

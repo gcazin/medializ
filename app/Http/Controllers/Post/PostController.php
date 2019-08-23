@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Post;
 
 use Alaouy\Youtube\Facades\Youtube;
+use App\Forms\PostForm;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Subcategory;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Kris\LaravelFormBuilder\FormBuilder;
 
 class PostController extends Controller
 {
@@ -45,28 +47,9 @@ class PostController extends Controller
         return view('pages.twittosphere');
     }
 
-    public function create()
-    {
-        return (User::isAdmin()) ? view('admin.create') : redirect($this->redirectTo);
-    }
-
     public function show()
     {
         return (User::isAdmin()) ? view('admin.admin-show-post') : redirect(route('home'));
-    }
-
-    public function delete(Request $request)
-    {
-        if(User::isAdmin()) {
-            Post::findOrFail($request->id)->delete();
-        }
-        return redirect(route('home'));
-    }
-
-    public function detail(Request $request)
-    {
-        $post = Post::where('id', $request->id)->get();
-        return view('pages.detail', compact('post', $post));
     }
 
     public function subcategory(Request $request)
@@ -75,14 +58,33 @@ class PostController extends Controller
         return view('pages.subcategory', compact('post', $post));
     }
 
-    /**
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    protected function store(Request $request)
+    public function create(FormBuilder $formBuilder)
     {
-        $validatedData = $request->validate ([
+        $form = $formBuilder->create(PostForm::class, [
+           'method' => 'POST',
+           'url' => route('admin.store')
+        ]);
+
+        return view('admin.create', compact('form'));
+    }
+
+    public function delete(Request $request)
+    {
+        if(User::isAdmin()) {
+            Post::findOrFail($request->id)->delete();
+        }
+        return redirect(route('admin.index'));
+    }
+
+    public function detail(Request $request)
+    {
+        $post = Post::where('id', $request->id)->get();
+        return view('pages.detail', compact('post', $post));
+    }
+
+    protected function store(FormBuilder $formBuilder, Request $request)
+    {
+        /*$validatedData = $request->validate ([
             'category_id' => 'required|max:255',
             'youtube_url' => 'required|max:255',
             'title' => 'required|max:255',
@@ -96,7 +98,7 @@ class PostController extends Controller
         $title = $request->title;
         $description = $request->description;
 
-        $video_path = Youtube::getVideoInfo (Youtube::parseVIdFromURL ($youtube_url));
+
         $avatar_channel = Youtube::getChannelById ($video_path->snippet->channelId);
 
         $post->category_id = $category_id;
@@ -109,6 +111,23 @@ class PostController extends Controller
         $post->slug = str_slug($title);
         $post->user_id = Auth::user()->id;
         $post->save();
-        return redirect(route('home') . '/media/' . $post->id . '/' . $post->slug);
+        return redirect(route('home') . '/media/' . $post->id . '/' . $post->slug);*/
+
+        $video_path = Youtube::getVideoInfo(Youtube::parseVIdFromURL($request->youtube_url));
+        $form = $formBuilder->create(PostForm::class);
+        $form->redirectIfNotValid();
+
+        $form_values = $form->getFieldValues();
+        $form_hidden = [
+            'image' => $video_path->snippet->thumbnails->high->url,
+            'author' => $video_path->snippet->channelTitle,
+            'slug' => str_slug($request->title),
+            'user_id' => Auth::user()->id
+        ];
+        $form_merge = array_merge($form_values, $form_hidden);
+        Post::create($form_merge);
+
+        return redirect(route('home') . '/media/' . Post::all()->last()->id . '/' . Post::all()->last()->slug);
+
     }
 }

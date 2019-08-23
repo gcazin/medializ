@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require ('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.postCss('resources/css/main.css', 'public/css', [
+/*mix.postCss('resources/css/main.css', 'public/css', [
     require('tailwindcss'),
-    require('tailwindcss-dark-mode'),
-]);
+]);*/
+
+mix.sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [
+            tailwindcss('./tailwind.config.js'),
+        ]
+    });
