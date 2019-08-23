@@ -12,6 +12,7 @@ class PostForm extends Form
 {
     public function buildForm()
     {
+
         $categories = array_filter(array_merge(array(0), Category::pluck('name')->all()));
         $subcategories = array_filter(array_merge(array(0), Subcategory::pluck('title')->all()));
 

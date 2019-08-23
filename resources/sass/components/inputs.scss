@@ -1,0 +1,14 @@
+/**
+* Input
+*
+ */
+
+.input {
+    @apply bg-white border border-gray-400 rounded py-2 px-4 block w-full appearance-none leading-normal;
+}
+.input:focus {
+    @apply outline-none shadow-outline;
+}
+.custom-label input:checked + svg {
+    display: block !important;
+}

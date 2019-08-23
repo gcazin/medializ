@@ -146,7 +146,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -154,16 +154,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\auth" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\admin" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\storage\app\public" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\sass\components" />
       <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views\admin" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views\post" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\admin\partials" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\admin" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\sass\components" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\sass" />
       <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\sass\theme" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\sass" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\app\Http\Controllers\Post" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\views" />
-      <recent name="F:\Logiciels\Programmes\UwAmp\www\SocialShare\resources\lang" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -205,6 +207,9 @@
       <workItem from="1566297004118" duration="794000" />
       <workItem from="1566386569174" duration="7986000" />
       <workItem from="1566554596909" duration="1188000" />
+      <workItem from="1566563211882" duration="811000" />
+      <workItem from="1566566165696" duration="9390000" />
+      <workItem from="1566587956407" duration="4280000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,58 @@
+/**
+* Buttons
+*
+ */
+
+.btn {
+    @apply font-bold rounded text-sm shadow border border-transparent border-solid;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+.btn-blue {
+    @apply bg-blue-400 text-white;
+    &:hover {
+        @apply bg-blue-600;
+    }
+}
+.btn-red {
+    @apply bg-red-500 text-white;
+    &:hover {
+        @apply bg-red-700;
+    }
+}
+.btn-green {
+    @apply bg-green-500 text-white;
+    &:hover {
+        @apply bg-green-700;
+    }
+}
+.btn-light {
+    @apply shadow border border-solid border-gray-300;
+    &:hover {
+        @apply shadow bg-gray-100;
+    }
+}
+
+.btn-outline-red {
+    @apply text-red-500;
+}
+
+.btn-initial {
+    font-size: 14px;
+    padding: 8px 10px;
+}
+.btn-sm {
+    font-size: 12px;
+    padding: 6px 8px;
+}
+.btn-xl {
+    font-size: 16px;
+    padding: 12px 16px;
+}
+.btn-2xl {
+    font-size: 30px;
+    padding: 15px 30px;
+}
+.btn-block {
+    @apply block w-full;
+}
