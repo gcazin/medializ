@@ -13,10 +13,10 @@ module.exports = {
         }
     },
     variants: {
-        backgroundColor: ['dark', 'dark-hover', 'dark-group-hover'],
-        textColor: ['dark', 'dark-hover', 'dark-group-hover'],
-        borderColor: ['dark', 'dark-hover', 'dark-group-hover'],
-        boxShadow: ['dark', 'dark-hover', 'dark-group-hover'],
+        backgroundColor: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
+        textColor: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
+        borderColor: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
+        boxShadow: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
     },
     plugins: [
         require('tailwindcss-dark-mode')()

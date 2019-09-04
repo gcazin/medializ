@@ -13,13 +13,15 @@
 
 Route::namespace('Post')->group(function() {
     Route::get('/admin', 'PostController@index')->name('admin.index');
-    Route::get('/admin/create', 'PostController@create')->name('admin.create');
-    Route::get('/admin/update/{id}', 'PostController@update')->name('admin.update');
-    Route::post('/admin/create', 'PostController@store')->name('admin.store');
     Route::get('/admin/list/post', 'PostController@show')->name('admin.show');
-    Route::get('/admin/delete/{id}', 'PostController@delete')->name('admin.delete');
+    Route::get('/admin/create', 'PostController@create')->name('post.create');
+    Route::post('/admin/create', 'PostController@store')->name('post.store');
+    Route::get('/admin/update/{id}', 'PostController@update')->name('post.update');
+    Route::get('/admin/delete/{id}', 'PostController@delete')->name('post.delete');
+
     Route::get('/media', 'PostController@media')->name('media');
     Route::get('/media/subcategory/{subcategory_id}', 'PostController@subcategory')->name('subcategory');
+
     Route::get('/media/{id}/{title}', 'PostController@detail')->name('detail');
     Route::get('/twittosphere', 'PostController@twittosphere')->name('twittosphere');
 });
@@ -28,9 +30,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::namespace('Auth')->group(function() {
     Route::get('/logout', 'LoginController@logout')->name('logout');
-    Route::post('/profile', 'UserController@update_avatar');
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::get('/settings', 'UserController@settings')->name('settings');
+
+    Route::resource ('profile', 'UserController', [
+        'only' => ['edit', 'update', 'destroy', 'show'],
+        'parameters' => ['profile' => 'user']
+    ]);
 
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');

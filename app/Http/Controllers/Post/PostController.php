@@ -62,9 +62,9 @@ class PostController extends Controller
     {
         $form = $formBuilder->create(PostForm::class, [
            'method' => 'POST',
-           'url' => route('admin.store')
+           'url' => route('post.store')
         ]);
-        return view('admin.create', compact('form'));
+        return view('post.create', compact('form'));
     }
 
     public function update(int $id, Request $request, FormBuilder $formBuilder)
@@ -76,7 +76,7 @@ class PostController extends Controller
         $form->redirectIfNotValid();
 
         $post->update($form->getFieldValues());
-        return view(route('admin.update', compact([
+        return view(route('post.update', compact([
             'form',
             'post'
         ])));

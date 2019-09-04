@@ -1,24 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
-    <h1 class="text-xl">Options</h1>
-    <div class="flex mt-4">
-        <div class="w-1/4">
-            <div class="bg-white dark:bg-gray-800 dark:text-gray-300 text-center pt-4 shadow">
-                <img class="m-auto rounded-full h-32 border border-solid border-gray-300" src="{{ asset('storage/avatars/'.$user->avatar) }}" alt="">
-                <h3 class="my-3 text-xl">{{ $user->name }}</h3>
-                <ul>
-                    <li class="border-solid border-t border-b border-gray-200"><a class="hover:bg-gray-200 block py-3" href="#">Informations personnelles</a></li>
-                    <li class="border-solid border-b border-gray-200"><a class="hover:bg-gray-200 block py-3" href="#">Options</a></li>
-                    <li class="border-solid border-gray-200"><a class="hover:bg-gray-200 block py-3" href="#">Avancé</a></li>
-                </ul>
-            </div>
-            <div ></div>
-        </div>
-        <div class="w-3/4">
-            <div class="bg-white dark:bg-gray-800 shadow ml-5 p-3">
-                <label class="custom-label flex">
-                    <span class="select-none w-11/12"> Se souvenir de moi</span>
+    <div class="w-9/12 m-auto">
+        <h1 class="text-xl">Options</h1>
+        @include('auth.partials.account-nav')
+        <div class="shadow">
+            <div class="p-3 bg-white dark:bg-gray-700 rounded-t">{{ __("Modifier vos préférences, et aidez-nous à personnaliser votre expérience.") }}</div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-b">
+                <label class="custom-label flex justify-between">
+                    <span class="select-none w-11/12"> Changer le thème</span>
                     <div class="text-right">
                         <div class="bg-white dark:bg-gray-900 shadow w-6 h-6 p-1 flex border-blue-200 dark:border-black border-solid border">
                             <input type="checkbox" class="hidden" name="remember" id="themeSwitch" {{ old('remember') ? 'checked' : '' }}>
@@ -27,6 +17,10 @@
                     </div>
                 </label>
             </div>
+            <!--<hr class="dark:border-gray-700">
+            <div class="p-3 bg-white dark:bg-gray-800 text-right rounded-b">
+                <button class="btn btn-blue">Sauvegarder</button>
+            </div>-->
         </div>
     </div>
 

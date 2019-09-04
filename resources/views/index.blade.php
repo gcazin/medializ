@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
     <h1 class="text-3xl text-center font-bold">En construction</h1>

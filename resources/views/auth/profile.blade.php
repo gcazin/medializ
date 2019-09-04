@@ -1,28 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
-    <h1 class="text-xl">Votre profil</h1>
-    <div class="flex mt-4">
-        <div class="w-1/4">
-            <div class="bg-white text-center pt-4 shadow">
-                <img class="m-auto rounded-full h-32 border border-solid border-gray-300" src="{{ asset('storage/avatars/'.$user->avatar) }}" alt="">
-                <h3 class="my-3 text-xl">{{ $user->name }}</h3>
-                <ul>
-                    <li class="border-solid border border-gray-200"><a class="hover:bg-gray-200 block py-3" href="#">Informations personnelles</a></li>
-                    <li class="border-solid border-b border-gray-200"><a class="hover:bg-gray-200 block py-3" href="{{ route('settings') }}">Options</a></li>
-                    <li class="border-solid border-b border-gray-200"><a class="hover:bg-gray-200 block py-3" href="#">Avancé</a></li>
-                </ul>
-            </div>
-            <div ></div>
-        </div>
-        <div class="w-3/4">
-            <div class="bg-white shadow ml-5">
-                <h1>Test</h1>
+    <div class="w-9/12 m-auto">
+        <h1 class="text-xl">Informations du compte</h1>
+        @include('auth.partials.account-nav')
+        <div class="shadow">
+            <div class="p-3 bg-white dark:bg-gray-700 rounded-t">{{ __("Modifier des éléments de votre compte ici.") }}</div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-b">
+                <form action="{{ route('profile.update', auth()->user()->id) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    {{ method_field('patch') }}
+                    <!--<div class="form-group">
+                        <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                        <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
+                    </div>-->
+                    <label for="name">Pseudo</label>
+                    <input name="name" type="text" id="name" class="input" value="{{ $user->name }}">
+                    <label for="email">Adresse mail</label>
+                    <input name="email" type="email" id="email" class="input" value="{{ $user->email }}">
+                    <label for="email">Mot de passe</label>
+                    <input name="password" type="password" id="password" class="input">
+                    <hr class="dark:border-gray-700">
+                    <div class="p-3 bg-white dark:bg-gray-800 text-right rounded-b">
+                        <button class="btn btn-green" type="submit">Sauvegarder</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
-    <!--<div class="container">
+    <div class="container">
         <div class="row">
             @if ($message = Session::get('success'))
 
@@ -47,27 +54,6 @@
                 </div>
             @endif
         </div>
-        <div class="row justify-content-center">
 
-            <div class="profile-header-container">
-                <div class="profile-header-img">
-                    <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">{{$user->name}}</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row justify-content-center">
-            <form action="/profile" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>-->
+    </div>
 @endsection
