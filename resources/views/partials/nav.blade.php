@@ -10,7 +10,7 @@
         </div>
         <div id="main-nav" class="w-full hidden lg:block lg:inline flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
-                <a href="{{ route('media') }}" class="navbar-items nav dark:text-gray-400 dark-hover:text-gray-600">
+                <a href="{{ route('post.index') }}" class="navbar-items nav dark:text-gray-400 dark-hover:text-gray-600">
                     Zap Youtube
                 </a>
                 <a href="{{ route('twittosphere') }}" class="navbar-items nav dark:text-gray-400 dark-hover:text-gray-600">
@@ -19,7 +19,7 @@
 
             </div>
             <div class="w-1/2 pr-0">
-                <div class="flex relative inline-block float-right">
+                <div class="flex relative inline-block sm:float-none lg:float-right sm:mt-3 lg:mt-0">
 
                     @if(Auth::check())
                         <div class="relative text-sm">
@@ -27,10 +27,10 @@
                                 <img class="w-8 h-8 rounded-full mr-2" src="/storage/avatars/{{ auth()->user()->avatar }}" alt="Avatar of User"> <span class="hidden md:inline-block">{{ auth()->user()->name }}</span>
                                 <i class="ml-1 align-baseline text-xs fas fa-chevron-down"></i>
                             </button>
-                            <div id="userMenu" class="bg-white border border-blue-100 border-solid dark:bg-gray-700 rounded shadow-md mt-4 absolute pin-t pin-r min-w-full overflow-auto z-30 invisible shadow">
+                            <div id="userMenu" class="bg-white border border-blue-100 dark:border-gray-800 border-solid dark:bg-gray-700 rounded shadow-md mt-4 absolute pin-t pin-r min-w-full overflow-auto z-30 invisible shadow">
                                 <ul class="list-reset">
-                                    <li><a href="{{ route('profile') }}" class="px-4 py-3 block text-black dark:text-gray-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Mon compte</a></li>
-                                    <li><a href="{{ route('settings') }}" class="px-4 py-3 block text-black dark:text-gray-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Réglages</a></li>
+                                    <li><a href="{{ route('edit') }}" class="px-4 py-3 block text-black dark:text-gray-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Mon compte</a></li>
+                                    <li><a href="{{ route('options') }}" class="px-4 py-3 block text-black dark:text-gray-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Réglages</a></li>
                                     @if(auth()->user()->role_id === 1)
                                         <li><a href="{{ route('admin.index') }}" class="px-4 py-3 block text-black dark:text-gray-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Administration</a></li>
                                     @endif
@@ -38,12 +38,6 @@
                                     <li><a href="{{ route('logout') }}" class="px-4 py-3 block text-red-500 dark:text-red-300 hover:bg-gray-200 dark-hover:bg-gray-800 no-underline hover:no-underline">Déconnexion</a></li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <div class="block lg:hidden pr-4">
-                            <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-black hover:border-teal appearance-none focus:outline-none">
-                                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                            </button>
                         </div>
                     @else
                         <a href="{{ route('login') }}" class="btn btn-light mr-1">Se connecter</a>
@@ -79,8 +73,7 @@
             <div class="w-full block">
                 <div class="text-sm overflow-x-auto overflow-y-hidden whitespace-no-wrap">
                     <a href="{{ route('admin.index') }}" class="navbar-items subcategory">{{ __('Administration') }}</a>
-                    <a href="{{ route('post.create') }}" class="navbar-items subcategory">{{ __('Créer un article') }}</a>
-                    <a href="{{ route('admin.show') }}" class="navbar-items subcategory">{{ __('Voir la liste des articles') }}</a>
+                    <a href="{{ route('admin.post.create') }}" class="navbar-items subcategory">{{ __('Créer un article') }}</a>
                 </div>
             </div>
         </nav>

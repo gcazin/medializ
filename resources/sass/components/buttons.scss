@@ -4,7 +4,7 @@
  */
 
 .btn {
-    @apply font-bold rounded text-sm shadow border border-transparent border-solid;
+    @apply font-bold rounded text-sm shadow border border-transparent border-solid inline-block;
     font-size: 14px;
     padding: 8px 10px;
 }

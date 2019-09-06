@@ -11,18 +11,25 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
+Route::namespace('Admin')->group(function() {
+    Route::get('/admin', 'AdminController@index')->name('admin.index');
+});
+
 Route::namespace('Post')->group(function() {
-    Route::get('/admin', 'PostController@index')->name('admin.index');
-    Route::get('/admin/list/post', 'PostController@show')->name('admin.show');
-    Route::get('/admin/create', 'PostController@create')->name('post.create');
-    Route::post('/admin/create', 'PostController@store')->name('post.store');
-    Route::get('/admin/update/{id}', 'PostController@update')->name('post.update');
-    Route::get('/admin/delete/{id}', 'PostController@delete')->name('post.delete');
 
-    Route::get('/media', 'PostController@media')->name('media');
-    Route::get('/media/subcategory/{subcategory_id}', 'PostController@subcategory')->name('subcategory');
+    Route::name('admin.')->group(function () {
+        Route::resource('admin/post', 'PostController', [
+            'prefix' => 'admin.'
+        ])->except(['index', 'show']);
+    });
 
-    Route::get('/media/{id}/{title}', 'PostController@detail')->name('detail');
+    Route::get('/admin/post/{id}/edit', 'PostController@edit')->name('admin.post.edit');
+    Route::get('/post/{id}/{slug}', 'PostController@show')->name('post.show');
+    Route::get('/post', 'PostController@index')->name('post.index');
+
+    Route::get('/post/subcategory/{subcategory_id}', 'PostController@subcategory')->name('subcategory');
     Route::get('/twittosphere', 'PostController@twittosphere')->name('twittosphere');
 });
 
@@ -30,23 +37,20 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::namespace('Auth')->group(function() {
     Route::get('/logout', 'LoginController@logout')->name('logout');
-    Route::get('/profile', 'UserController@profile')->name('profile');
-    Route::get('/settings', 'UserController@settings')->name('settings');
+    Route::get('/mon-compte', 'UserController@edit')->name('edit');
+    Route::get('/options', 'UserController@options')->name('options');
 
-    Route::resource ('profile', 'UserController', [
-        'only' => ['edit', 'update', 'destroy', 'show'],
-        'parameters' => ['profile' => 'user']
-    ]);
+    Route::resource('user', 'UserController')->except(['index', 'show', 'create']);
 
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
-    Route::post('login', 'LoginController@login');
-    Route::post('logout', 'LoginController@logout')->name('logout');
+    Route::get('connexion', 'LoginController@showLoginForm')->name('login');
+    Route::post('connexion', 'LoginController@login');
+    Route::post('deconnexion', 'LoginController@logout')->name('logout');
     // Registration Routes...
-    Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'RegisterController@register');
+    Route::get('inscription', 'RegisterController@showRegistrationForm')->name('register');
+    Route::post('inscription', 'RegisterController@register');
     // Password Reset Routes...
-    Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm');
-    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');
-    Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm');
-    Route::post('password/reset', 'ResetPasswordController@reset');
+    Route::get('mot-de-passe/reinitialisation', 'ForgotPasswordController@showLinkRequestForm');
+    Route::post('mot-de-passe/email', 'ForgotPasswordController@sendResetLinkEmail');
+    Route::get('mot-de-passe/reinitialisation/{token}', 'ResetPasswordController@showResetForm');
+    Route::post('mot-de-passe/reinitialisation', 'ResetPasswordController@reset');
 });

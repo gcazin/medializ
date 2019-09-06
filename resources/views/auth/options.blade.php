@@ -3,7 +3,7 @@
 @section('content')
     <div class="w-9/12 m-auto">
         <h1 class="text-xl">Options</h1>
-        @include('auth.partials.account-nav')
+        @include('auth.partials.nav')
         <div class="shadow">
             <div class="p-3 bg-white dark:bg-gray-700 rounded-t">{{ __("Modifier vos préférences, et aidez-nous à personnaliser votre expérience.") }}</div>
             <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-b">

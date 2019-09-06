@@ -6,6 +6,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
     <script src="{{ asset('js/nav.js') }}" defer></script>
+    <style>
+        .footer::after {
+            content: "";
+            width: 100%;
+            height: 120px;
+            background: url("{{ asset('storage/images/wave.svg') }}");
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: -115px;
+        }
+    </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     @if(Request::is('admin/*') || Request::is('admin'))
@@ -19,15 +31,10 @@
     @endphp
     @include("partials.nav", compact('user', $user))
 </header>
-<main class="content">
+<main class="content mb-5">
     @yield('content')
 </main>
-<footer class="footer dark:bg-gray-800 bg-gray-700 relative pt-12 mt-20 text-white">
-    <div class="absolute h-16 w-full" style="top: -220px;z-index: -1;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path class="footer-wave" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,170.7C640,171,800,149,960,149.3C1120,149,1280,171,1360,181.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-    </div>
+<footer class="footer dark:bg-gray-800 bg-gray-700 relative text-white  mt-20">
     <div class="w-4/5 m-auto flex py-5 flex-col lg:flex-row">
         <div class="flex-1 lg:mr-5">
             <h1 class="">{{ config('app.name') }}</h1>

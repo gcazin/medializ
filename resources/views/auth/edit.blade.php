@@ -3,13 +3,40 @@
 @section('content')
     <div class="w-9/12 m-auto">
         <h1 class="text-xl">Informations du compte</h1>
-        @include('auth.partials.account-nav')
+        @include('auth.partials.nav')
         <div class="shadow">
             <div class="p-3 bg-white dark:bg-gray-700 rounded-t">{{ __("Modifier des éléments de votre compte ici.") }}</div>
             <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-b">
-                <form action="{{ route('profile.update', auth()->user()->id) }}" method="post" enctype="multipart/form-data">
+                <div class="container">
+                    <div class="row">
+                        @if ($message = Session::get('success'))
+
+                            <div class="alert alert-success alert-block">
+
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+
+                                <strong>{{ $message }}</strong>
+
+                            </div>
+
+                        @endif
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+
+                </div>
+                <form action="{{ route('user.update', auth()->user()->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    {{ method_field('patch') }}
+                    @method('PATCH')
                     <!--<div class="form-group">
                         <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
                         <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
@@ -27,33 +54,5 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            @if ($message = Session::get('success'))
-
-                <div class="alert alert-success alert-block">
-
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-
-                    <strong>{{ $message }}</strong>
-
-                </div>
-
-            @endif
-
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-
     </div>
 @endsection

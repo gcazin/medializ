@@ -6,7 +6,7 @@
     <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 xl:w-1/3 pr-3">
             <!--Metric Card-->
-            <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow p-2">
+            <div class="bg-white dark:bg-gray-800 rounded shadow-md p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded p-3 bg-orange-dark"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
@@ -21,7 +21,7 @@
         </div>
         <div class="w-full md:w-1/2 xl:w-1/3 pr-3">
             <!--Metric Card-->
-            <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow p-2">
+            <div class="bg-white dark:bg-gray-800 rounded shadow-md p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded p-3 bg-blue-dark"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
@@ -34,9 +34,9 @@
             </div>
             <!--/Metric Card-->
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 pr-3">
+        <div class="w-full md:w-1/2 xl:w-1/3">
             <!--Metric Card-->
-            <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow p-2">
+            <div class="bg-white dark:bg-gray-800 rounded shadow-md p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded p-3 bg-blue-dark"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
@@ -54,10 +54,9 @@
     <!--Divider-->
     <hr class="border-b-2 border-grey-light my-8 mx-4">
 
-    <div class="flex flex-row flex-wrap flex-grow mt-2">
+    <!--<div class="flex flex-row flex-wrap flex-grow mt-2">
 
         <div class="w-full md:w-1/2 pr-3">
-            <!--Graph Card-->
             <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
                 <div class="border-b p-3">
                     <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -95,11 +94,9 @@
                     </script>
                 </div>
             </div>
-            <!--/Graph Card-->
         </div>
 
         <div class="w-full md:w-1/2">
-            <!--Graph Card-->
             <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
                 <div class="border-b p-3">
                     <h5 class="uppercase text-grey-dark">Test</h5>
@@ -124,11 +121,9 @@
                     </script>
                 </div>
             </div>
-            <!--/Graph Card-->
         </div>
 
         <div class="w-full md:w-1/2 xl:w-1/3 pr-3 mt-3">
-            <!--Graph Card-->
             <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
                 <div class="border-b p-3">
                     <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -162,11 +157,9 @@
                     </script>
                 </div>
             </div>
-            <!--/Graph Card-->
         </div>
 
         <div class="w-full md:w-1/2 xl:w-1/3 pr-3 mt-3">
-            <!--Graph Card-->
             <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
                 <div class="border-b p-3">
                     <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -187,63 +180,36 @@
                     </script>
                 </div>
             </div>
-            <!--/Graph Card-->
         </div>
+        -->
 
-        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-            <!--Template Card-->
-            <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
-                <div class="border-b p-3">
-                    <h5 class="uppercase text-grey-dark">Template</h5>
-                </div>
-                <div class="p-5">
-
-                </div>
-            </div>
-            <!--/Template Card-->
+    <div class="mx-auto">
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded my-6">
+            <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+                <thead>
+                <tr>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">ID</th>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Titre</th>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Contenu</th>
+                    <th class="text-right py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(App\Post::all() as $post)
+                <tr class="hover:bg-grey-lighter">
+                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->id }}</td>
+                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->title }}</td>
+                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->description }}</td>
+                    <td class="py-4 px-6 border-b border-grey-light text-right">
+                        <a href="{{ route('admin.post.edit', [$post->id]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-green hover:bg-green-dark">Modifier</a>
+                        <a href="{{ route('post.show', [$post->id, $post->slug]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-blue hover:bg-blue-dark">Voir</a>
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
-
-        <div class="w-full mt-3">
-            <!--Table Card-->
-            <div class="bg-white dark:bg-gray-800 border dark:border-transparent rounded shadow">
-                <div class="border-b p-3">
-                    <h5 class="uppercase text-grey-dark">Table</h5>
-                </div>
-                <div class="p-5">
-                    <table class="w-full p-5 text-grey-darker">
-                        <thead>
-                        <tr>
-                            <th class="text-left text-blue-darkest">Name</th>
-                            <th class="text-left text-blue-darkest">Side</th>
-                            <th class="text-left text-blue-darkest">Role</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                        <tr>
-                            <td>Obi Wan Kenobi</td>
-                            <td>Light</td>
-                            <td>Jedi</td>
-                        </tr>
-                        <tr>
-                            <td>Greedo</td>
-                            <td>South</td>
-                            <td>Scumbag</td>
-                        </tr>
-                        <tr>
-                            <td>Darth Vader</td>
-                            <td>Dark</td>
-                            <td>Sith</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <p class="py-2"><a href="#">See More issues...</a></p>
-
-                </div>
-            </div>
-            <!--/table Card-->
-        </div>
+    </div>
 
 
     </div>

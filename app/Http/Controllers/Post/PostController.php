@@ -5,98 +5,51 @@ namespace App\Http\Controllers\Post;
 use Alaouy\Youtube\Facades\Youtube;
 use App\Forms\PostForm;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use App\Post;
-use App\Subcategory;
-use App\User;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 use Kris\LaravelFormBuilder\FormBuilder;
 
-class PostController extends Controller
-{
-    protected $redirectTo = '/admin';
-
-    public function __construct()
-    {
-    }
+class PostController extends Controller {
 
     /**
-     * Dashboard
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * Page principale
+     *
+     * @return Factory|View
      */
     public function index()
     {
-        return (User::isAdmin()) ? view('admin.index') : redirect(route('home'));
+        return view('post.index');
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * Page de création d'un post
+     *
+     * @param FormBuilder $formBuilder
+     * @return Factory|View
      */
-    public function media()
-    {
-        return view('pages.media');
-    }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function twittosphere()
-    {
-        return view('pages.twittosphere');
-    }
-
-    public function show()
-    {
-        return (User::isAdmin()) ? view('admin.show') : redirect(route('home'));
-    }
-
-    public function subcategory(Request $request)
-    {
-        $post = Post::where('subcategory_id', $request->subcategory_id)->get();
-        return view('pages.subcategory', compact('post', $post));
-    }
-
     public function create(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(PostForm::class, [
-           'method' => 'POST',
-           'url' => route('post.store')
+            'method' => 'POST',
+            'url' => route('admin.post.store')
         ]);
         return view('post.create', compact('form'));
     }
 
-    public function update(int $id, Request $request, FormBuilder $formBuilder)
-    {
-        $post = Post::findOrFail($id);
-        $postForm = PostForm::class;
-
-        $form = $formBuilder->create($postForm);
-        $form->redirectIfNotValid();
-
-        $post->update($form->getFieldValues());
-        return view(route('post.update', compact([
-            'form',
-            'post'
-        ])));
-    }
-
-    public function delete(Request $request)
-    {
-        if(User::isAdmin()) {
-            Post::findOrFail($request->id)->delete();
-        }
-        return redirect(route('admin.index'));
-    }
-
-    public function detail(Request $request)
-    {
-        $post = Post::where('id', $request->id)->get();
-        return view('pages.detail', compact('post', $post));
-    }
-
-    protected function store(FormBuilder $formBuilder, Request $request)
+    /**
+     * Sauvegarde d'un nouveau post
+     *
+     * @param FormBuilder $formBuilder
+     * @param Request $request
+     * @return RedirectResponse|Redirector
+     */
+    public function store(FormBuilder $formBuilder, Request $request)
     {
         $video_path = Youtube::getVideoInfo(Youtube::parseVIdFromURL($request->youtube_url));
         $form = $formBuilder->create(PostForm::class);
@@ -112,7 +65,80 @@ class PostController extends Controller
         $form_merge = array_merge($form_values, $form_hidden);
         Post::create($form_merge);
 
-        return redirect(route('home') . '/media/' . Post::all()->last()->id . '/' . Post::all()->last()->slug);
-
+        return redirect(route('home') . '/post/' . Post::all()->last()->id . '/' . Post::all()->last()->slug);
     }
+
+    /**
+     * Affichage d'un post
+     *
+     * @param $id
+     * @param $slug
+     * @return Factory|View|void
+     */
+    public function show($id, $slug)
+    {
+        $posts = Post::where([
+            'id' => $id,
+            'slug' => $slug
+        ])->get();
+        return view('post.show', compact('posts', $posts));
+    }
+
+    /**
+     * Page d'édition d'un post
+     *
+     * @param $id
+     * @return Factory|View
+     */
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('post.edit', compact('post'));
+    }
+
+    /**
+     * Mise à jour d'un post
+     *
+     * @param int $id
+     * @param Request $request
+     * @param FormBuilder $formBuilder
+     * @return Factory|View
+     */
+    public function update(int $id, PostRequest $request)
+    {
+        $post = Post::find($id);
+        $post->update($request->all());
+
+        return redirect()->route('post.show', [$id, Post::find($id)->slug])
+            ->with('success','Product updated successfully');
+    }
+
+    /**
+     * Supprime un post
+     *
+     * @param $id
+     * @return RedirectResponse|Redirector
+     */
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect(route('post.index'));
+    }
+
+    /**
+     * @return Factory|View
+     */
+    public function twittosphere()
+    {
+        return view('pages.twittosphere');
+    }
+
+    public function subcategory(Request $request)
+    {
+        $post = Post::where('subcategory_id', $request->subcategory_id)->get();
+        return view('pages.subcategory', compact('post', $post));
+    }
+
 }
