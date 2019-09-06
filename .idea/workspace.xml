@@ -2,35 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cb365a9-2386-4f0e-8fee-4e8f233ec8a5" name="Default Changelist" comment="Refactoring">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/post/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/alerts-dark.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/alerts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/components/buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/components/inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/partials/account-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/options.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/subcategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/subcategory.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/dark-mode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/dark-mode.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +173,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/post" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sass/components" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -200,8 +181,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\post" />
       <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\sass\components" />
+      <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\post" />
       <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\auth" />
       <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\resources\views\admin" />
       <recent name="F:\Logiciels\Programmes\Laragon\www\SocialShare\storage\app\public" />
@@ -274,7 +255,7 @@
       <workItem from="1567431612952" duration="317000" />
       <workItem from="1567529698631" duration="2063000" />
       <workItem from="1567532072930" duration="11950000" />
-      <workItem from="1567607380520" duration="29113000" />
+      <workItem from="1567607380520" duration="36973000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring">
       <created>1567614041405</created>

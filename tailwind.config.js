@@ -17,6 +17,7 @@ module.exports = {
         textColor: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
         borderColor: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
         boxShadow: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
+        fontWeight: ['hover', 'focus', 'dark', 'dark-hover', 'dark-group-hover'],
     },
     plugins: [
         require('tailwindcss-dark-mode')()

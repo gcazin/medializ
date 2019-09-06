@@ -6817,6 +6817,114 @@ video {
   font-weight: 900;
 }
 
+.mode-dark .dark\:font-hairline{
+  font-weight: 100;
+}
+
+.mode-dark .dark\:font-thin{
+  font-weight: 200;
+}
+
+.mode-dark .dark\:font-light{
+  font-weight: 300;
+}
+
+.mode-dark .dark\:font-normal{
+  font-weight: 400;
+}
+
+.mode-dark .dark\:font-medium{
+  font-weight: 500;
+}
+
+.mode-dark .dark\:font-semibold{
+  font-weight: 600;
+}
+
+.mode-dark .dark\:font-bold{
+  font-weight: 700;
+}
+
+.mode-dark .dark\:font-extrabold{
+  font-weight: 800;
+}
+
+.mode-dark .dark\:font-black{
+  font-weight: 900;
+}
+
+.mode-dark .dark-hover\:font-hairline:hover{
+  font-weight: 100;
+}
+
+.mode-dark .dark-hover\:font-thin:hover{
+  font-weight: 200;
+}
+
+.mode-dark .dark-hover\:font-light:hover{
+  font-weight: 300;
+}
+
+.mode-dark .dark-hover\:font-normal:hover{
+  font-weight: 400;
+}
+
+.mode-dark .dark-hover\:font-medium:hover{
+  font-weight: 500;
+}
+
+.mode-dark .dark-hover\:font-semibold:hover{
+  font-weight: 600;
+}
+
+.mode-dark .dark-hover\:font-bold:hover{
+  font-weight: 700;
+}
+
+.mode-dark .dark-hover\:font-extrabold:hover{
+  font-weight: 800;
+}
+
+.mode-dark .dark-hover\:font-black:hover{
+  font-weight: 900;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-hairline{
+  font-weight: 100;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-thin{
+  font-weight: 200;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-light{
+  font-weight: 300;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-normal{
+  font-weight: 400;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-medium{
+  font-weight: 500;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-semibold{
+  font-weight: 600;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-bold{
+  font-weight: 700;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-extrabold{
+  font-weight: 800;
+}
+
+.mode-dark .group:hover .dark-group-hover\:font-black{
+  font-weight: 900;
+}
+
 .h-0{
   height: 0;
 }
@@ -16932,6 +17040,13 @@ video {
   background-color: #3182ce;
 }
 
+.btn-outline-blue {
+  background-color: #fff;
+  border-width: 2px;
+  border-color: #90cdf4;
+  box-shadow: none;
+}
+
 .btn-red {
   background-color: #f56565;
   color: #fff;
@@ -17005,6 +17120,7 @@ video {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-bottom: 0.5rem;
   display: block;
   width: 100%;
   -webkit-appearance: none;
@@ -17027,9 +17143,23 @@ video {
 *
  */
 
-.error {
-  color: #f56565;
-  display: block;
+.alert {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  border-left-width: 4px;
+  padding: 1rem;
+}
+
+.alert-success {
+  background-color: #f0fff4;
+  border-color: #68d391;
+  color: #2f855a;
+}
+
+.alert-danger {
+  background-color: #fff5f5;
+  border-color: #fc8181;
+  color: #c53030;
 }
 
 .mode-dark {
@@ -17043,6 +17173,10 @@ video {
    */
   /**
   * Input
+  *
+   */
+  /**
+  * Errors messages
   *
    */
 }
@@ -17125,6 +17259,25 @@ video {
 
 .mode-dark .custom-label input:checked + svg {
   display: block !important;
+}
+
+.mode-dark .alert {
+  background-color: #1a202c;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  border-left-width: 4px;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.mode-dark .alert-success {
+  border-color: #48bb78;
+  color: #48bb78;
+}
+
+.mode-dark .alert-danger {
+  border-color: #f56565;
+  color: #f56565;
 }
 
 @media (min-width: 640px){
@@ -17876,114 +18029,6 @@ video {
 
   .sm\:font-sans{
     font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .sm\:font-hairline{
-    font-weight: 100;
-  }
-
-  .sm\:font-thin{
-    font-weight: 200;
-  }
-
-  .sm\:font-light{
-    font-weight: 300;
-  }
-
-  .sm\:font-normal{
-    font-weight: 400;
-  }
-
-  .sm\:font-medium{
-    font-weight: 500;
-  }
-
-  .sm\:font-semibold{
-    font-weight: 600;
-  }
-
-  .sm\:font-bold{
-    font-weight: 700;
-  }
-
-  .sm\:font-extrabold{
-    font-weight: 800;
-  }
-
-  .sm\:font-black{
-    font-weight: 900;
-  }
-
-  .sm\:hover\:font-hairline:hover{
-    font-weight: 100;
-  }
-
-  .sm\:hover\:font-thin:hover{
-    font-weight: 200;
-  }
-
-  .sm\:hover\:font-light:hover{
-    font-weight: 300;
-  }
-
-  .sm\:hover\:font-normal:hover{
-    font-weight: 400;
-  }
-
-  .sm\:hover\:font-medium:hover{
-    font-weight: 500;
-  }
-
-  .sm\:hover\:font-semibold:hover{
-    font-weight: 600;
-  }
-
-  .sm\:hover\:font-bold:hover{
-    font-weight: 700;
-  }
-
-  .sm\:hover\:font-extrabold:hover{
-    font-weight: 800;
-  }
-
-  .sm\:hover\:font-black:hover{
-    font-weight: 900;
-  }
-
-  .sm\:focus\:font-hairline:focus{
-    font-weight: 100;
-  }
-
-  .sm\:focus\:font-thin:focus{
-    font-weight: 200;
-  }
-
-  .sm\:focus\:font-light:focus{
-    font-weight: 300;
-  }
-
-  .sm\:focus\:font-normal:focus{
-    font-weight: 400;
-  }
-
-  .sm\:focus\:font-medium:focus{
-    font-weight: 500;
-  }
-
-  .sm\:focus\:font-semibold:focus{
-    font-weight: 600;
-  }
-
-  .sm\:focus\:font-bold:focus{
-    font-weight: 700;
-  }
-
-  .sm\:focus\:font-extrabold:focus{
-    font-weight: 800;
-  }
-
-  .sm\:focus\:font-black:focus{
-    font-weight: 900;
   }
 
   .sm\:h-0{
@@ -25882,114 +25927,6 @@ video {
     font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-hairline{
-    font-weight: 100;
-  }
-
-  .md\:font-thin{
-    font-weight: 200;
-  }
-
-  .md\:font-light{
-    font-weight: 300;
-  }
-
-  .md\:font-normal{
-    font-weight: 400;
-  }
-
-  .md\:font-medium{
-    font-weight: 500;
-  }
-
-  .md\:font-semibold{
-    font-weight: 600;
-  }
-
-  .md\:font-bold{
-    font-weight: 700;
-  }
-
-  .md\:font-extrabold{
-    font-weight: 800;
-  }
-
-  .md\:font-black{
-    font-weight: 900;
-  }
-
-  .md\:hover\:font-hairline:hover{
-    font-weight: 100;
-  }
-
-  .md\:hover\:font-thin:hover{
-    font-weight: 200;
-  }
-
-  .md\:hover\:font-light:hover{
-    font-weight: 300;
-  }
-
-  .md\:hover\:font-normal:hover{
-    font-weight: 400;
-  }
-
-  .md\:hover\:font-medium:hover{
-    font-weight: 500;
-  }
-
-  .md\:hover\:font-semibold:hover{
-    font-weight: 600;
-  }
-
-  .md\:hover\:font-bold:hover{
-    font-weight: 700;
-  }
-
-  .md\:hover\:font-extrabold:hover{
-    font-weight: 800;
-  }
-
-  .md\:hover\:font-black:hover{
-    font-weight: 900;
-  }
-
-  .md\:focus\:font-hairline:focus{
-    font-weight: 100;
-  }
-
-  .md\:focus\:font-thin:focus{
-    font-weight: 200;
-  }
-
-  .md\:focus\:font-light:focus{
-    font-weight: 300;
-  }
-
-  .md\:focus\:font-normal:focus{
-    font-weight: 400;
-  }
-
-  .md\:focus\:font-medium:focus{
-    font-weight: 500;
-  }
-
-  .md\:focus\:font-semibold:focus{
-    font-weight: 600;
-  }
-
-  .md\:focus\:font-bold:focus{
-    font-weight: 700;
-  }
-
-  .md\:focus\:font-extrabold:focus{
-    font-weight: 800;
-  }
-
-  .md\:focus\:font-black:focus{
-    font-weight: 900;
-  }
-
   .md\:h-0{
     height: 0;
   }
@@ -33886,114 +33823,6 @@ video {
     font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-hairline{
-    font-weight: 100;
-  }
-
-  .lg\:font-thin{
-    font-weight: 200;
-  }
-
-  .lg\:font-light{
-    font-weight: 300;
-  }
-
-  .lg\:font-normal{
-    font-weight: 400;
-  }
-
-  .lg\:font-medium{
-    font-weight: 500;
-  }
-
-  .lg\:font-semibold{
-    font-weight: 600;
-  }
-
-  .lg\:font-bold{
-    font-weight: 700;
-  }
-
-  .lg\:font-extrabold{
-    font-weight: 800;
-  }
-
-  .lg\:font-black{
-    font-weight: 900;
-  }
-
-  .lg\:hover\:font-hairline:hover{
-    font-weight: 100;
-  }
-
-  .lg\:hover\:font-thin:hover{
-    font-weight: 200;
-  }
-
-  .lg\:hover\:font-light:hover{
-    font-weight: 300;
-  }
-
-  .lg\:hover\:font-normal:hover{
-    font-weight: 400;
-  }
-
-  .lg\:hover\:font-medium:hover{
-    font-weight: 500;
-  }
-
-  .lg\:hover\:font-semibold:hover{
-    font-weight: 600;
-  }
-
-  .lg\:hover\:font-bold:hover{
-    font-weight: 700;
-  }
-
-  .lg\:hover\:font-extrabold:hover{
-    font-weight: 800;
-  }
-
-  .lg\:hover\:font-black:hover{
-    font-weight: 900;
-  }
-
-  .lg\:focus\:font-hairline:focus{
-    font-weight: 100;
-  }
-
-  .lg\:focus\:font-thin:focus{
-    font-weight: 200;
-  }
-
-  .lg\:focus\:font-light:focus{
-    font-weight: 300;
-  }
-
-  .lg\:focus\:font-normal:focus{
-    font-weight: 400;
-  }
-
-  .lg\:focus\:font-medium:focus{
-    font-weight: 500;
-  }
-
-  .lg\:focus\:font-semibold:focus{
-    font-weight: 600;
-  }
-
-  .lg\:focus\:font-bold:focus{
-    font-weight: 700;
-  }
-
-  .lg\:focus\:font-extrabold:focus{
-    font-weight: 800;
-  }
-
-  .lg\:focus\:font-black:focus{
-    font-weight: 900;
-  }
-
   .lg\:h-0{
     height: 0;
   }
@@ -41888,114 +41717,6 @@ video {
 
   .xl\:font-sans{
     font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-
-  .xl\:font-hairline{
-    font-weight: 100;
-  }
-
-  .xl\:font-thin{
-    font-weight: 200;
-  }
-
-  .xl\:font-light{
-    font-weight: 300;
-  }
-
-  .xl\:font-normal{
-    font-weight: 400;
-  }
-
-  .xl\:font-medium{
-    font-weight: 500;
-  }
-
-  .xl\:font-semibold{
-    font-weight: 600;
-  }
-
-  .xl\:font-bold{
-    font-weight: 700;
-  }
-
-  .xl\:font-extrabold{
-    font-weight: 800;
-  }
-
-  .xl\:font-black{
-    font-weight: 900;
-  }
-
-  .xl\:hover\:font-hairline:hover{
-    font-weight: 100;
-  }
-
-  .xl\:hover\:font-thin:hover{
-    font-weight: 200;
-  }
-
-  .xl\:hover\:font-light:hover{
-    font-weight: 300;
-  }
-
-  .xl\:hover\:font-normal:hover{
-    font-weight: 400;
-  }
-
-  .xl\:hover\:font-medium:hover{
-    font-weight: 500;
-  }
-
-  .xl\:hover\:font-semibold:hover{
-    font-weight: 600;
-  }
-
-  .xl\:hover\:font-bold:hover{
-    font-weight: 700;
-  }
-
-  .xl\:hover\:font-extrabold:hover{
-    font-weight: 800;
-  }
-
-  .xl\:hover\:font-black:hover{
-    font-weight: 900;
-  }
-
-  .xl\:focus\:font-hairline:focus{
-    font-weight: 100;
-  }
-
-  .xl\:focus\:font-thin:focus{
-    font-weight: 200;
-  }
-
-  .xl\:focus\:font-light:focus{
-    font-weight: 300;
-  }
-
-  .xl\:focus\:font-normal:focus{
-    font-weight: 400;
-  }
-
-  .xl\:focus\:font-medium:focus{
-    font-weight: 500;
-  }
-
-  .xl\:focus\:font-semibold:focus{
-    font-weight: 600;
-  }
-
-  .xl\:focus\:font-bold:focus{
-    font-weight: 700;
-  }
-
-  .xl\:focus\:font-extrabold:focus{
-    font-weight: 800;
-  }
-
-  .xl\:focus\:font-black:focus{
-    font-weight: 900;
   }
 
   .xl\:h-0{
