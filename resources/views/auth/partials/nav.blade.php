@@ -16,7 +16,7 @@ function checkRouteName($name) {
         <a href="{{ route('options') }}" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none {{ checkRouteName("options") }}">
             Options générales
         </a>
-        <a class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none {{ checkRouteName("developer") }}">
+        <a href="{{ route('advanced') }}" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none {{ checkRouteName("advanced") }}">
             Avancés
         </a>
     </nav>

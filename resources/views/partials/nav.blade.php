@@ -74,6 +74,7 @@
                 <div class="text-sm overflow-x-auto overflow-y-hidden whitespace-no-wrap">
                     <a href="{{ route('admin.index') }}" class="navbar-items subcategory">{{ __('Administration') }}</a>
                     <a href="{{ route('admin.post.create') }}" class="navbar-items subcategory">{{ __('Créer un article') }}</a>
+                    <a href="{{ route('admin.subcategory.create') }}" class="navbar-items subcategory">{{ __('Créer une sous-catégorie') }}</a>
                 </div>
             </div>
         </nav>

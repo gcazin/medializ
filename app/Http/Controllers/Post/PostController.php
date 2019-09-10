@@ -135,10 +135,4 @@ class PostController extends Controller {
         return view('pages.twittosphere');
     }
 
-    public function subcategory(Request $request)
-    {
-        $post = Post::where('subcategory_id', $request->subcategory_id)->get();
-        return view('pages.subcategory', compact('post', $post));
-    }
-
 }

@@ -14,6 +14,11 @@ use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 class UserController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Page des options
      *
@@ -34,6 +39,12 @@ class UserController extends Controller
     {
         $user = Auth::user();
         return view('auth.edit',compact('user', $user));
+    }
+
+    public function advanced()
+    {
+        $user = Auth::user();
+        return view('auth.advanced', compact('user', $user));
     }
 
     /**

@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Laravelista\Comments\Commentable;
 
 class Post extends Model
 {
-    use Notifiable;
+    use Commentable;
 
     /**
      * The attributes that are mass assignable.

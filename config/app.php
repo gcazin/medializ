@@ -168,6 +168,7 @@ return [
 
         Alaouy\Youtube\YoutubeServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

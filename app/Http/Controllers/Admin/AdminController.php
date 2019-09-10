@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Page d'administration
      *
@@ -17,7 +22,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return (User::isAdmin()) ? view('admin.index') : abort('403', 'Non autorisé');
+        return view('admin.index');
     }
 
 }

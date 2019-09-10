@@ -6,13 +6,14 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
+use Laravelista\Comments\Commenter;
 
 /**
  * @method static find($id)
  */
 class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable;
+    use Notifiable, Commenter;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +21,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatars',
+        'name', 'email', 'password', 'avatars', 'password'
     ];
 
     /**

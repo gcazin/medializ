@@ -184,6 +184,8 @@
         -->
 
     <div class="mx-auto">
+        <h1 class="text-xl">Article</h1>
+
         <div class="bg-white dark:bg-gray-800 shadow-md rounded my-6">
             <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
                 <thead>
@@ -196,29 +198,52 @@
                 </thead>
                 <tbody>
                 @foreach(App\Post::all() as $post)
-                <tr class="hover:bg-grey-lighter">
-                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->id }}</td>
-                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->title }}</td>
-                    <td class="py-4 px-6 border-b border-grey-light">{{ $post->description }}</td>
-                    <td class="py-4 px-6 border-b border-grey-light text-right">
-                        <a href="{{ route('admin.post.edit', [$post->id]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-green hover:bg-green-dark">Modifier</a>
-                        <a href="{{ route('post.show', [$post->id, $post->slug]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-blue hover:bg-blue-dark">Voir</a>
-                    </td>
-                </tr>
+                    <tr class="hover:bg-grey-lighter">
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $post->id }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $post->title }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $post->description }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light text-right">
+                            <a href="{{ route('admin.post.edit', [$post->id]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-green hover:bg-green-dark">Modifier</a>
+                            <a href="{{ route('post.show', [$post->id, $post->slug]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-blue hover:bg-blue-dark">Voir</a>
+                        </td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 
+    <!--Divider-->
+    <hr class="border-b-2 border-grey-light my-8 mx-4">
 
+    <div class="mx-auto">
+        <h1 class="text-xl">Sous-catégorie</h1>
+
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded my-6">
+            <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+                <thead>
+                <tr>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">ID</th>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Titre</th>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Description</th>
+                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(App\Subcategory::all() as $subcategory)
+                    <tr class="hover:bg-grey-lighter">
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $subcategory->id }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $subcategory->title }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $subcategory->description }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light text-right">
+                            <a href="{{ route('admin.subcategory.edit', [$subcategory->id]) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs btn btn-green hover:bg-green-dark">Modifier</a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <!--/ Console Content-->
-
-    </div>
-
-
-    </div>
-    <!--/container-->
 @endsection

@@ -8,8 +8,6 @@ use Illuminate\Notifications\Notifiable;
 class Subcategory extends Model
 {
 
-    use Notifiable;
-
     protected $fillable = [
         'title', 'description'
     ];
