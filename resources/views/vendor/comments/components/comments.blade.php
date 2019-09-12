@@ -34,11 +34,10 @@
         'guest_commenting' => true
     ])
 @else
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Authentication required</h5>
-            <p class="card-text">You must log in to post a comment.</p>
-            <a href="{{ route('login') }}" class="btn btn-primary">Log in</a>
-        </div>
+    <div class="alert alert-warning">
+        <h5 class="mb-3">Vous devez être connecté pour poster un commentaire</h5>
+        <a href="{{ route('register') }}" class="btn btn-light text-blue-500">S'inscrire</a>
+        ou
+        <a href="{{ route('login') }}" class="btn btn-light text-blue-500">Se connecter</a>
     </div>
 @endauth

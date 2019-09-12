@@ -11,7 +11,6 @@
             content: "";
             width: 100%;
             height: 120px;
-            background: url("{{ asset('storage/images/wave.svg') }}");
             background-size: cover;
             position: absolute;
             left: 0;
@@ -34,13 +33,19 @@
 <main class="content mb-5">
     @yield('content')
 </main>
-<footer class="footer dark:bg-gray-800 bg-gray-700 relative text-white  mt-20">
-    <div class="w-4/5 m-auto flex py-5 flex-col lg:flex-row">
+<footer class="footer dark:bg-gray-800 bg-gray-700 relative text-white mt-20 border-t-4 border-gray-800 pb-2">
+    <div class="w-4/5 m-auto flex py-5 flex-col lg:flex-row py-10">
         <div class="flex-1 lg:mr-5">
             <h1 class="">{{ config('app.name') }}</h1>
         </div>
         <div class="flex-1 lg:mr-5 my-5">
             <h1 class="">Informations légales</h1>
+            <ul class="list-disc ml-5">
+                <li><a href="" class="link">Test</a></li>
+                <li><a href="" class="link">Test</a></li>
+                <li><a href="" class="link">Test</a></li>
+                <li><a href="" class="link">Test</a></li>
+            </ul>
         </div>
         <div class="flex-1">
             <h1 class="">Newsletter</h1>
@@ -48,6 +53,7 @@
             <button type="submit" class="btn btn-blue btn-block">Inscription</button>
         </div>
     </div>
+    <p class="text-center text-gray-600">Copyright 2019. SocialShare tous droits réservés.</p>
 </footer>
 <script src="{{ asset('js/app.js') }}"></script>
 <script>

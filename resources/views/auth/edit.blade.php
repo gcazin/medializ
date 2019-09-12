@@ -34,13 +34,13 @@
                     <input type="file" class="hidden" name="avatar" id="avatar" aria-describedby="fileHelp">
                 </label>
             </div>
-            <label for="name">Pseudo</label>
+            <label for="name">Changer votre pseudo:</label>
             <input name="name" type="text" id="name" class="input" value="{{ $user->name }}">
-            <label for="email">Adresse mail</label>
+            <label for="email">Changer votre adresse mail:</label>
             <input name="email" type="email" id="email" class="input" value="{{ $user->email }}">
-            <label for="email">Mot de passe</label>
+            <label for="email">Nouveau mot de passe:</label>
             <input name="password" type="password" id="password" class="input">
-            <label for="email">Confirmation du mot de passe</label>
+            <label for="email">Confirmation du nouveau mot de passe:</label>
             <input name="password_confirmation" type="password" id="confirm_password" class="input">
             <hr class="dark:border-gray-700">
             <div class="p-3 dark:bg-gray-800 text-right rounded-b">

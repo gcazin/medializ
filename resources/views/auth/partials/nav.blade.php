@@ -10,11 +10,13 @@ function checkRouteName($name) {
 
 <div class="mt-3 mb-5">
     <nav class="flex flex-col sm:flex-row">
+
+        <a href="" class="text-gray-600 py-4 pr-6 block hover:text-blue-500 focus:outline-none font-medium">Votre profil</a>
         <a href="{{ route('edit') }}" class="text-gray-600 py-4 pr-6 block hover:text-blue-500 focus:outline-none font-medium {{ checkRouteName("edit") }}">
-            Informations basiques
+            Modifier le profil
         </a>
         <a href="{{ route('options') }}" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none {{ checkRouteName("options") }}">
-            Options générales
+            Options
         </a>
         <a href="{{ route('advanced') }}" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none {{ checkRouteName("advanced") }}">
             Avancés

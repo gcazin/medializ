@@ -12,7 +12,7 @@
             {{ $comments_count }}
         </div>
     </div>
-    <div class="lg:w-9/12 dark:bg-gray-800 bg-white border border-blue-100 rounded-r lg:justify-between leading-normal">
+    <div class="lg:w-9/12 dark:bg-gray-800 bg-white border border-blue-100 dark:border-gray-900 rounded-r lg:justify-between leading-normal">
         <div class="p-4 relative">
             <a href="{{ route('post.show', [$post->id, $post->slug]) }}" class="absolute w-full h-full"></a>
             <p class="dark:text-gray-400 text-gray-900 text-2xl">{{ $post->title }}</p>
@@ -20,7 +20,7 @@
         </div>
         <div class="p-4 flex items-center">
             <div class="text-sm flex-1">
-                <a class="bg-gray-200 text-gray-800 py-1 px-2 rounded-lg" href="{{ route('subcategory', \App\Subcategory::find($post->subcategory_id)) }}" class="text-gray-600">{{ \App\Subcategory::find($post->subcategory_id)->title }}</a>
+                <a class="bg-gray-200 dark:bg-gray-500 text-gray-800 dark:text-gray-800 py-1 px-2 rounded-lg" href="{{ route('subcategory', \App\Subcategory::find($post->subcategory_id)) }}" class="text-gray-600">{{ \App\Subcategory::find($post->subcategory_id)->title }}</a>
             </div>
             @if(\Illuminate\Support\Facades\Auth::check())
                 @if(\App\User::isAdmin())

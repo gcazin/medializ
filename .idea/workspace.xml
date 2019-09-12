@@ -2,40 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cb365a9-2386-4f0e-8fee-4e8f233ec8a5" name="Default Changelist" comment="Refactoring">
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/advanced.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/account-content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/subcategory/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/subcategory/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/subcategory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SocialShare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SocialShare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Post/SubCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Post/SubCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Subcategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subcategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/navbar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/options.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/options.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/subcategory.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/twittosphere.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/update.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/comments/components/comments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/comments/components/comments.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -287,7 +269,7 @@
       <workItem from="1568038869171" duration="5154000" />
       <workItem from="1568045685661" duration="593000" />
       <workItem from="1568057030474" duration="10892000" />
-      <workItem from="1568104692253" duration="10600000" />
+      <workItem from="1568104692253" duration="21218000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring">
       <created>1567614041405</created>

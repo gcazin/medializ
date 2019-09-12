@@ -51,4 +51,10 @@ class SubCategoryController extends Controller
             ->with('success','Product updated successfully');
     }
 
+    public function destroy($id)
+    {
+        $subcategory = Subcategory::find($id);
+        $subcategory->delete();
+    }
+
 }

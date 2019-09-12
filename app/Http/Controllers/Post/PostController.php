@@ -100,13 +100,13 @@ class PostController extends Controller {
      * Mise à jour d'un post
      *
      * @param int $id
-     * @param Request $request
-     * @param FormBuilder $formBuilder
+     * @param PostRequest $request
      * @return Factory|View
      */
     public function update(int $id, PostRequest $request)
     {
         $post = Post::find($id);
+        $post->slug = str_slug($request->title);
         $post->update($request->all());
 
         return redirect()->route('post.show', [$id, Post::find($id)->slug])
@@ -130,9 +130,9 @@ class PostController extends Controller {
     /**
      * @return Factory|View
      */
-    public function twittosphere()
+    public function threads()
     {
-        return view('pages.twittosphere');
+        return view('threads.index');
     }
 
 }

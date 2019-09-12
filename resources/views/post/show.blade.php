@@ -23,7 +23,7 @@
 
             <!-- show -->
             <div class="w-9/12">
-                <div class="detail bg-white rounded shadow px-5 py-4 mb-3 ">
+                <div class="detail bg-white dark:bg-gray-800 rounded shadow px-5 py-4 mb-3 ">
                     <h1 class="text-3xl mb-4">{{ $post->title }}</h1>
                     @php
                         $url_part = \Alaouy\Youtube\Youtube::_parse_url_query($post->youtube_url);
@@ -34,7 +34,7 @@
                     <p class="mt-4">{{ $post->description }}</p>
                 </div>
 
-                <div class="detail bg-white rounded shadow px-5 py-4 mb-3 ">
+                <div class="detail bg-white dark:bg-gray-800 rounded shadow px-5 py-4 mb-3 ">
                     @comments(['model' => $post])
                 </div>
             </div>

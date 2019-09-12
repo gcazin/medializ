@@ -31,11 +31,11 @@ Route::namespace('Post')->group(function() {
 
     Route::get('/admin/subcategory/{id}/edit', 'SubCategoryController@edit')->name('admin.subcategory.edit');
 
-    Route::get('/post', 'PostController@index')->name('post.index');
+    Route::get('/videos', 'PostController@index')->name('post.index');
     Route::get('/post/{id}/{slug}', 'PostController@show')->name('post.show');
     Route::get('/posts/subcategory/{subcategory_id}', 'SubCategoryController@index')->name('subcategory');
 
-    Route::get('/twittosphere', 'PostController@twittosphere')->name('twittosphere');
+    Route::get('/threads', 'PostController@threads')->name('threads');
 });
 
 Route::get('/', 'HomeController@index')->name('home');

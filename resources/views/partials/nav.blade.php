@@ -1,20 +1,31 @@
+@php
+
+    use Illuminate\Support\Facades\Route;
+
+    //TODO: Faire un checker de route globale à tous le projet
+    function routeName($name) {
+        return (Route::currentRouteName() == $name) ? ("active") : null;
+    }
+
+@endphp
+
 <div class="border-gray-300 dark:border-gray-900 border-b border-solid">
-    <nav class="flex items-center justify-between flex-wrap px-5 py-4 w-11/12 m-auto">
+    <nav class="flex items-center justify-between flex-wrap px-5 w-11/12 m-auto">
         <div class="flex items-center flex-shrink-0 text-black mr-6">
-            <a href="{{ route('home') }}" class="font-semibold text-xl tracking-tight dark:text-gray-200">{{ config('app.name') }}</a>
+            <a href="{{ route('home') }}" class="font-semibold text-2xl tracking-tight dark:text-gray-200">{{ config('app.name') }}</a>
         </div>
         <div class="block lg:hidden">
             <button class="navbar-burger flex items-center px-3 py-2 border rounded text-blue-500 border-blue-500 hover:text-blue-700 hover:border-blue-700">
                 <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
             </button>
         </div>
-        <div id="main-nav" class="w-full hidden lg:block lg:inline flex-grow lg:flex lg:items-center lg:w-auto">
+        <div id="main-nav" class="w-full text-xl font-bold hidden lg:block lg:inline flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
-                <a href="{{ route('post.index') }}" class="navbar-items nav dark:text-gray-400 dark-hover:text-gray-600">
-                    Zap Youtube
+                <a href="{{ route('post.index') }}" class="navbar-items nav {{ routeName('post.index') }} dark:text-gray-400 dark-hover:text-gray-600 py-4">
+                    Vidéos
                 </a>
-                <a href="{{ route('twittosphere') }}" class="navbar-items nav dark:text-gray-400 dark-hover:text-gray-600">
-                    Thread Twitter
+                <a href="{{ route('threads') }}" class="navbar-items nav {{ routeName('threads') }} dark:text-gray-400 dark-hover:text-gray-600 py-4">
+                    Threads
                 </a>
 
             </div>
